@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 </head>
+
 <body>
-    
+    <header>
+        <h1>Library</h1>
+    </header>
+    <main>
+        <div class="grid">
+            <div class="card add">
+                <button id="plus">+</button>
+            </div>
+        </div>
+    </main>
+    <div id="overlay">
+        <div class="add-book">
+            <form action="">
+                <p id="cross">X</p>
+                <h3>Add Book</h3>
+                <input type="text" name="title" id="title" placeholder="Title" required>
+                <input type="text" name="author" id="author" placeholder="Author" required>
+                <input type="number" name="pages" id="pages" placeholder="Pages" required>
+                <div>
+                    <label for="read">Read?</label>
+                    <input type="checkbox" name="read" id="read">
+                </div>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
