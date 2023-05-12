@@ -1,8 +1,9 @@
 :root {
-  --main-bg-colour: #eeeeee;
-  --secondary-bg-colour: #ffffff;
+  --light-gray: #eeeeee;
+  --blue-gray: #537188;
+  --white: #ffffff;
 
-  --br: 5%;
+  --br: 10px;
 }
 
 * {
@@ -11,7 +12,7 @@
 }
 
 body {
-  background-color: var(--main-bg-colour);
+  background-color: var(--light-gray);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding-bottom: 100px;
@@ -21,9 +22,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--secondary-bg-colour);
+  background-color: var(--white);
   height: 150px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 h1 {
@@ -42,7 +43,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: var(--secondary-bg-colour);
+  background-color: var(--white);
   border-radius: var(--br);
   height: 300px;
   width: 250px;
@@ -51,15 +52,9 @@ h1 {
   font-size: 18px;
 }
 
-.card.add {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #plus {
   font-size: 72px;
-  background-color: var(--secondary-bg-colour);
+  background-color: var(--white);
   border: none;
   transition: 0.3s;
   transform: rotate(90deg);
@@ -70,10 +65,10 @@ h1 {
   transform: scale(1.7);
 }
 
-.add-book {
+.new-card {
   display: flex;
   justify-content: center;
-  background-color: var(--secondary-bg-colour);
+  background-color: var(--white);
   width: 300px;
   height: 400px;
   padding: 30px;
@@ -94,9 +89,9 @@ form {
 
 input[type="text"],
 input[type="number"] {
-  border-radius: 10px;
+  border-radius: var(--br);
   border: none;
-  background-color: var(--main-bg-colour);
+  background-color: var(--light-gray);
   height: 50px;
   font-size: 20px;
   padding: 20px;
@@ -105,17 +100,12 @@ input[type="number"] {
 #submit {
   width: 100%;
   height: 50px;
-  background-color: #537188;
+  background-color: var(--blue-gray);
   border: none;
-  border-radius: 10px;
-  font-size: 20px;
-  color: #eeeeee;
+  border-radius: var(--br);
+  font-size: 18px;
+  color: var(--light-gray);
   transition: 0.4s;
-}
-
-#submit:hover {
-  cursor: pointer;
-  opacity: 0.6;
 }
 
 #overlay {
@@ -140,39 +130,28 @@ input[type="number"] {
 }
 
 #cross:hover {
-  transform: scale(1.4);
+  transform: scale(1.5);
+}
+
+.remove,
+.read-btn {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: var(--br);
+  transition: 0.4s;
+  font-size: 18px;
+  color: var(--white);
 }
 
 .remove {
-  width: 100%;
-  height: 40px;
-  border: none;
-  background-color: #537188;
-  color: var(--secondary-bg-colour);
-  border-radius: 10px;
-  transition: 0.4s;
-  font-size: 18px;
+  background-color: var(--blue-gray);
 }
 
-.remove:hover {
+.remove:hover,
+.read-btn:hover,
+#submit:hover {
   opacity: 0.6;
-  cursor: pointer;
-}
-
-.read-btn {
-  background-color: #d3d3d3;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  margin-top: 10px;
-  width: 100%;
-  height: 40px;
-  transition: 0.4s;
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-.read-btn:hover {
   cursor: pointer;
 }
 

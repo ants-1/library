@@ -38,7 +38,6 @@ function createCard(book) {
   const newCard = document.createElement("div");
   const btn = document.createElement("button");
   const read = document.getElementById("read");
-  const readed = book.read;
 
   const elements = [
     { type: "p", text: book.title },
@@ -47,22 +46,23 @@ function createCard(book) {
   ];
 
   btn.classList.add("read-btn");
+  
+  if (btn.classList.contains("not-read") || read.checked) {
+    btn.textContent = "Read";
+    btn.classList.add("read");
+    book.read = true;
+  } else if (!read.checked || !book.read) {
+    btn.textContent = "Not read";
+    btn.classList.add("not-read");
+    book.read = false;
+  }
+
   btn.addEventListener("click", () => {
-    book.read = !book.read;
     btn.textContent = book.read ? "Not read" : "Read";
     btn.classList.toggle("read");
     btn.classList.toggle("not-read");
-  });
-
-  if (read.checked) {
-    btn.textContent = "Read";
-    btn.classList.add("read");
-    book.read = readed;
-  } else if(!read.checked){
-    btn.textContent = "Not read";
-    btn.classList.add("not-read");
     book.read = !book.read;
-  }
+  });
 
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "Remove";
